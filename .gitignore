@@ -51,3 +51,5 @@ target/
 
 # Specified for project
 *~
+/.ipynb_checkpoints/
+.idea/
