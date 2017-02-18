@@ -2,7 +2,7 @@
 
 # Download coco-caption
 # 0. git clone & soft link
-git clone git@github.com:DeepLearningCourse/coco-caption.git ../coco-caption
+git clone https://github.com/DeepLearningCourse/coco-caption.git ../coco-caption
 ln -sf ../coco-caption ./external/coco-caption
 
 # Download and unzip necessary files
