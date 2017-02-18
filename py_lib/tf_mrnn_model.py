@@ -9,20 +9,19 @@ Learning like a child: Fast novel visual concept learning from sentence
 descriptions of images. In Proc. ICCV 2015.
 """
 
-import numpy as np
 import os
 import logging
 
-from common_utils import CommonUtiler
+import tensorflow as tf
+from tensorflow.python.ops import math_ops
+
+from .common_utils import CommonUtiler
 
 logger = logging.getLogger('TfMrnnModel')
 logging.basicConfig(
     format="[%(asctime)s - %(filename)s:line %(lineno)4s] %(message)s",
     datefmt='%d %b %H:%M:%S')
 logger.setLevel(logging.INFO)
-
-import tensorflow as tf
-from tensorflow.python.ops import math_ops
 
 
 class mRNNModel(object):
@@ -59,13 +58,13 @@ class mRNNModel(object):
             rnn_cell_basic = tf.nn.rnn_cell.GRUCell(rnn_size)
         elif config.rnn_type == 'LSTM':
             rnn_cell_basic = tf.nn.rnn_cell.LSTMCell(rnn_size, input_size=emb_size,
-                                                     use_peepholes=True)
+                                                     use_peepholes=True, state_is_tuple=False)
         else:
             raise NameError("Unknown rnn type %s!" % config.rnn_type)
         if is_training and config.keep_prob_rnn < 1:
             rnn_cell_basic = tf.nn.rnn_cell.DropoutWrapper(
                 rnn_cell_basic, output_keep_prob=config.keep_prob_rnn)
-        cell = tf.nn.rnn_cell.MultiRNNCell([rnn_cell_basic] * config.num_rnn_layers)
+        cell = tf.nn.rnn_cell.MultiRNNCell([rnn_cell_basic] * config.num_rnn_layers, state_is_tuple=False)
         state_size = cell.state_size
 
         # Create word embeddings
