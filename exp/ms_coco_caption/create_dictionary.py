@@ -13,8 +13,8 @@ logger.setLevel(logging.INFO)
 if __name__ == '__main__':
     # Hyperparameters
     min_count = 3
-    vocab_path = '../../cache/dictionary/mscoco_mc%d_vocab' % min_count
-    mscoco_root = '../../datasets/ms_coco'
+    vocab_path = './cache/dictionary/mscoco_mc%d_vocab' % min_count
+    mscoco_root = './datasets/ms_coco'
     anno_file_names = ['anno_list_mscoco_trainModelVal_m_RNN.npy']
 
     # Preparations

@@ -23,23 +23,23 @@ flags.DEFINE_integer("ses_threads", 2, "Tensorflow CPU session threads to use")
 # Training data
 flags.DEFINE_string(
     "anno_files_path",
-    "../../datasets/ms_coco/mscoco_anno_files/"
+    "./datasets/ms_coco/mscoco_anno_files/"
     "anno_list_mscoco_trainModelVal_m_RNN.npy",
     "Training file annotations, multipy files should be seperated by ':'")
 # Model paths
 flags.DEFINE_string("model_root",
-                    "../../cache/models/mscoco",
+                    "./cache/models/mscoco",
                     "root of the tf mRNN model")
 flags.DEFINE_string("model_name",
                     "mrnn_GRU_mscoco_init",
                     "name of the model")
 # Vocabulary path
 flags.DEFINE_string("vocab_path",
-                    "../../cache/dictionary/mscoco_mc3_vocab",
+                    "./cache/dictionary/mscoco_mc3_vocab",
                     "path of the vocabulary file for the tf mRNN model")
 # Visual feature path
 flags.DEFINE_string("vf_dir",
-                    "../../cache/mscoco_image_features/inception_v3",
+                    "./cache/mscoco_image_features/inception_v3",
                     "directory for the visual feature")
 # Pre-trained model
 flags.DEFINE_string("pre_trained_model_path",
@@ -107,7 +107,7 @@ def run_epoch(session, iters_done, config, models, data_provider,
 def main(_):
     # Load model configuration
     cu = CommonUtiler()
-    config_path = os.path.join('../../model_conf', FLAGS.model_name + '.py')
+    config_path = os.path.join('./model_conf', FLAGS.model_name + '.py')
     config = cu.load_config(config_path)
 
     # Start model training
