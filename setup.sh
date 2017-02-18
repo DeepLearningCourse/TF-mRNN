@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Download and unzip necessary files
 # 1. anno list files (Annotation copyright belongs to MS COCO team)
 mkdir ./datasets

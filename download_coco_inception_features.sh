@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # make necessary directories
 mkdir ./cache
 mkdir ./cache/mscoco_image_features
