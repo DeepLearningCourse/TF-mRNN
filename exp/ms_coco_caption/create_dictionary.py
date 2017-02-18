@@ -1,7 +1,3 @@
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 import os
 import logging
@@ -48,7 +44,7 @@ if __name__ == '__main__':
     fout.write('<unk>\n')
     fout.write('<bos>\n')
     num_word = 3
-    for word, freq in vocab.iteritems():
+    for word, freq in vocab.items():
       if freq >= min_count:
         fout.write(word + '\n')
         num_word += 1

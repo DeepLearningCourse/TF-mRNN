@@ -1,7 +1,3 @@
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 import os
 import logging
@@ -103,5 +99,5 @@ class CommonUtiler(object):
         
   def load_config(self, config_path):
     variables = {}
-    execfile(config_path, variables)
+    exec(compile(open(config_path).read(), config_path, 'exec'), variables)
     return variables['config']

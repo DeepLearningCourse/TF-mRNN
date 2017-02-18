@@ -9,10 +9,6 @@ Learning like a child: Fast novel visual concept learning from sentence
 descriptions of images. In Proc. ICCV 2015.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import numpy as np
 import os
 import logging

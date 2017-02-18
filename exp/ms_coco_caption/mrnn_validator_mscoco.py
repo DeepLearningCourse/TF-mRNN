@@ -1,9 +1,5 @@
 """TEST for mRNN decoder for MS COCO dataset."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import time
 import sys
 import os
@@ -66,7 +62,7 @@ def main(unused_args):
   # Evaluate trained models on val
   decoder = mRNNDecoder(config, FLAGS.model_name, FLAGS.vocab_path,
       gpu_memory_fraction=FLAGS.gpu_memory_fraction)
-  for i in xrange(*[int(x) for x in FLAGS.eval_stat.split()]):
+  for i in range(*[int(x) for x in FLAGS.eval_stat.split()]):
     model_path = os.path.join(FLAGS.model_root, FLAGS.model_name, 
         'variables', 'model_%d.ckpt' % i)
     while not os.path.exists(model_path):
