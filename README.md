@@ -23,11 +23,11 @@ If you find this package useful in your research, please consider citing:
     
 ## Requirements
 - [TensorFlow](https://www.tensorflow.org/) 0.8+
-- python 2.7 (Need ackages of numpy, scipy, nltk. All included in [Anaconda](https://store.continuum.io/cshop/anaconda/))
-- [MS COCO caption toolkit](https://github.com/tylin/coco-caption)
+- python 3.4+ (Need ackages of numpy, scipy, nltk. All included in [Anaconda](https://store.continuum.io/cshop/anaconda/))
+- [MS COCO caption toolkit](https://github.com/DeepLearningCourse/coco-caption)
 
 ## Basic installation (sufficient for the demo)
-1. install [MS COCO caption toolkit](https://github.com/tylin/coco-caption)
+1. install [MS COCO caption toolkit](https://github.com/DeepLearningCourse/coco-caption)
 
 2. Suppose that toolkit is install on $PATH_COCOCap and this package is install at $PATH_mRNN_CR. Create a soft link to COCOCap as follows:
   ```Shell
