@@ -11,7 +11,7 @@ logging.basicConfig(
 logger.setLevel(logging.INFO)
 
 if __name__ == '__main__':
-    # Hyparameters
+    # Hyperparameters
     min_count = 3
     vocab_path = '../../cache/dictionary/mscoco_mc%d_vocab' % min_count
     mscoco_root = '../../datasets/ms_coco'
