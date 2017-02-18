@@ -92,9 +92,9 @@ class CommonUtiler(object):
     @staticmethod
     def coco_val_eval(pred_path, result_path):
         """Evaluate the predicted sentences on MS COCO validation."""
-        sys.path.append('./external/coco-caption')
-        from pycocotools.coco import COCO
-        from pycocoevalcap.eval import COCOEvalCap
+        #sys.path.append('./external/coco-caption')
+        from external.coco_caption.pycocotools.coco import COCO
+        from external.coco_caption.pycocoevalcap.eval import COCOEvalCap
 
         coco = COCO('./external/coco-caption/annotations/captions_val2014.json')
         cocoRes = coco.loadRes(pred_path)
