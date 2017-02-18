@@ -9,10 +9,10 @@ import skimage.io as io
 import pylab
 pylab.rcParams['figure.figsize'] = (6.0, 4.0)
 
-sys.path.append('./py_lib/')
-from common_utils import CommonUtiler
-from tf_mrnn_decoder import mRNNDecoder
-from vision import ImageFeatureExtractor
+#sys.path.append('./py_lib/')
+from py_lib.common_utils import CommonUtiler
+from py_lib.tf_mrnn_decoder import mRNNDecoder
+from py_lib.vision import ImageFeatureExtractor
 
 
 # set up paths

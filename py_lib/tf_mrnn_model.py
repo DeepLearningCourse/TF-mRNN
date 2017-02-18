@@ -15,7 +15,7 @@ import logging
 import tensorflow as tf
 from tensorflow.python.ops import math_ops
 
-from common_utils import CommonUtiler
+from .common_utils import CommonUtiler
 
 logger = logging.getLogger('TfMrnnModel')
 logging.basicConfig(
