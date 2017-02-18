@@ -27,17 +27,9 @@ If you find this package useful in your research, please consider citing:
 - [MS COCO caption toolkit](https://github.com/DeepLearningCourse/coco-caption)
 
 ## Basic installation (sufficient for the demo)
-1. install [MS COCO caption toolkit](https://github.com/DeepLearningCourse/coco-caption)
-
-2. Suppose that toolkit is install on $PATH_COCOCap and this package is install at $PATH_mRNN_CR. Create a soft link to COCOCap as follows:
+Download necessary data for using a trained m-RNN model. (Will clone another repository in the process.)
   ```Shell
-  cd $PATH_mRNN_CR
-  ln -sf $PATH_COCOCap ./external/coco-caption
-  ```
-  
-3. Download necessary data for using a trained m-RNN model.
-  ```Shell
-  bash setup.sh
+  bash ./setup.sh
   ```
   
 ## Demo
