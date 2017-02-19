@@ -28,13 +28,13 @@ flags.DEFINE_float("gpu_memory_fraction", 0.4, "Fraction of GPU memory to use")
 flags.DEFINE_string("model_root",
                     "./cache/models/mscoco",
                     "root of the tf mRNN model")
-flags.DEFINE_string("model_name", "mrnn_GRU_mscoco", "name of the model")
+flags.DEFINE_string("model_name", "mrnn_GRU_mscoco_init", "name of the model")
 flags.DEFINE_string("eval_stat",
                     "10000 570001 10000",
                     "start_iter step_iter end_iter")
 # Vocabulary path
 flags.DEFINE_string("vocab_path",
-                    "./cache/dctionary/mscoco_mc3_vocab",
+                    "./cache/dictionary/mscoco_mc3_vocab",
                     "path of the vocabulary file for the tf mRNN model")
 # Visual feature path
 flags.DEFINE_string("vf_dir",
