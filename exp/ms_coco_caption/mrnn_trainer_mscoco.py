@@ -25,7 +25,7 @@ flags.DEFINE_string(
     "anno_files_path",
     "./datasets/ms_coco/mscoco_anno_files/"
     "anno_list_mscoco_trainModelVal_m_RNN.npy",
-    "Training file annotations, multipy files should be seperated by ':'")
+    "Training file annotations, multiple files should be separated by ':'")
 # Model paths
 flags.DEFINE_string("model_root",
                     "./cache/models/mscoco",
@@ -145,7 +145,7 @@ def main(_):
             models[0].saver.restore(session, FLAGS.pre_trained_model_path)
             logger.info('Continue to train from %s', FLAGS.pre_trained_model_path)
         else:
-            tf.initialize_all_variables().run()
+            tf.global_variables_initializer()
 
         iters_done = 0
         data_provider = mRNNCocoBucketDataProvider(FLAGS.anno_files_path.split(':'),
