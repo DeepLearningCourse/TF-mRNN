@@ -22,7 +22,7 @@ If you find this package useful in your research, please consider citing:
     }
     
 ## Requirements
-- [TensorFlow](https://www.tensorflow.org/) 0.8+
+- [TensorFlow](https://www.tensorflow.org/) 0.8-0.12
 - python 3.4+ (Need ackages of numpy, scipy, nltk. All included in [Anaconda](https://store.continuum.io/cshop/anaconda/))
 - [MS COCO caption toolkit](https://github.com/DeepLearningCourse/coco-caption)
 
@@ -85,3 +85,9 @@ See ./datasets/ms_coco/mscoco_anno_files/README.md for details.
 
 ## TODO
 1. Allow end-to-end finetuning of the vision network parameters.
+
+## Troublehooting
+If you're experiencing problems with code running, try to export python path before a run:
+```Shell
+export PYTHONPATH="."
+```
