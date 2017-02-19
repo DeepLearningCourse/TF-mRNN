@@ -22,7 +22,7 @@ flags = tf.flags
 
 # CPU threads
 flags.DEFINE_integer("ses_threads", 4, "Tensorflow CPU session threads to use")
-# GPU memoery usage
+# GPU memory usage
 flags.DEFINE_float("gpu_memory_fraction", 0.4, "Fraction of GPU memory to use")
 # Model
 flags.DEFINE_string("model_root",
@@ -30,7 +30,7 @@ flags.DEFINE_string("model_root",
                     "root of the tf mRNN model")
 flags.DEFINE_string("model_name", "mrnn_GRU_mscoco_init", "name of the model")
 flags.DEFINE_string("eval_stat",
-                    "10000 570001 10000",
+                    "573420 573421 10000",
                     "start_iter step_iter end_iter")
 # Vocabulary path
 flags.DEFINE_string("vocab_path",
@@ -61,10 +61,10 @@ def main(_):
     # Evaluate trained models on val
     decoder = mRNNDecoder(config, FLAGS.model_name, FLAGS.vocab_path,
                           gpu_memory_fraction=FLAGS.gpu_memory_fraction)
-    for i in range(*[int(x) for x in FLAGS.eval_stat.split()]):
-        model_path = os.path.join(FLAGS.model_root, FLAGS.model_name,
-                                  'variables', 'model_%d.ckpt' % i)
-        while not os.path.exists(model_path):
+    start, stop, step = [int(x) for x in FLAGS.eval_stat.split()]
+    for i in range(start, stop, step):
+        model_path = os.path.join(FLAGS.model_root, FLAGS.model_name, 'variables', 'model_%d.ckpt' % i)
+        while not os.path.exists(model_path + ".meta"):
             logger.warning('Cannot load model file, sleep 1 hour to retry')
             time.sleep(3600)
 
