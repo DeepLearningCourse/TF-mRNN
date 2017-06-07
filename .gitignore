@@ -55,7 +55,8 @@ target/
 .idea/
 cache/
 datasets/
-external/
+external/*
 !external/README.md
-trained_models/coco_caption/
+!external/coco-caption
+trained_models/coco_caption/*
 !trained_models/coco_caption/README.md
