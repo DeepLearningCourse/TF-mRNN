@@ -74,7 +74,7 @@ def run_epoch(session, iters_done, config, models, data_provider,
             for m in models:
                 m.assign_lr(session, config.learning_rate * lr_decay)
 
-        # run forward and backward propgation
+        # run forward and backward propagation
         m = models[ind_buc]
         cost, _ = session.run([m.cost, m.train_op],
                               {m.input_data: x,

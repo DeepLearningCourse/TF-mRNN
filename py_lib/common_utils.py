@@ -2,7 +2,6 @@ import numpy as np
 import os
 import logging
 import re
-import sys
 
 logger = logging.getLogger('CommonUtils')
 logging.basicConfig(

@@ -1,7 +1,6 @@
 """TEST for mRNN decoder for MS COCO dataset."""
 
 import time
-import sys
 import os
 import numpy as np
 import logging
